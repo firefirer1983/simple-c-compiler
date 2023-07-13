@@ -6,12 +6,11 @@ import platform
 import subprocess as sp 
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(script_dir, "modules"))
 
-from cparser import Parser
-from scanner import Scanner, SymbolTableManager
-from semantic_analyser import SemanticAnalyser
-from code_gen import CodeGen, MemoryManager
+from modules.cparser import Parser
+from modules.scanner import Scanner, SymbolTableManager
+from modules.semantic_analyser import SemanticAnalyser
+from modules.code_gen import CodeGen, MemoryManager
 
 
 # Maximal virtual memory for compiled program process (in bytes).
@@ -82,8 +81,7 @@ def compile(args):
             print("Program output:")
             print(tester_output)
 
-
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description='Simple C Compiler written in Python')
     parser.add_argument("source_file", help="Path to C source file.")
     parser.add_argument('-r', '--run', action='store_true', help='Run the output program after compilation.')
@@ -97,3 +95,8 @@ if __name__ == "__main__":
         args.source_file = os.path.abspath(script_dir)
     args = parser.parse_args()
     compile(args)
+    
+
+
+if __name__ == "__main__":
+    main()

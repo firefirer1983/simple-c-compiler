@@ -7,9 +7,9 @@ Date:               20 March 2020
 
 import os
 from anytree import Node, RenderTree, PreOrderIter
-from scanner import Scanner, SymbolTableManager
-from semantic_analyser import SemanticAnalyser
-from code_gen import CodeGen, MemoryManager
+from modules.scanner import Scanner, SymbolTableManager
+from modules.semantic_analyser import SemanticAnalyser
+from modules.code_gen import CodeGen, MemoryManager
 
 script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

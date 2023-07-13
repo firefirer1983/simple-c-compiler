@@ -6,8 +6,8 @@ Date:               16 March 2020
 '''
 
 import os
-from scanner import SymbolTableManager
-from code_gen import MemoryManager
+from modules.scanner import SymbolTableManager
+from modules.code_gen import MemoryManager
 
 script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

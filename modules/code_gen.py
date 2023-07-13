@@ -6,7 +6,8 @@ Date:               1 April 2020
 '''
 
 import os
-from scanner import SymbolTableManager
+
+from modules.scanner import SymbolTableManager
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
